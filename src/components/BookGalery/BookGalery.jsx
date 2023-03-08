@@ -11,10 +11,17 @@ export default function BookGalery() {
     });
   }, []);
 
+  const deleteById = (idToDelete) => {
+    apiService.deleteById(idToDelete);
+    let newData = book.filter((item)=> item.id !== idToDelete);
+    setBook(newData);
+
+  }
+
   return (
     <div>
       {book.map((item) => (
-        <BookCard key={item.id} title={item.title} item={item} />
+        <BookCard key={item.id} title={item.title} item={item} deleteById={deleteById} />
       ))}
     </div>
   );
