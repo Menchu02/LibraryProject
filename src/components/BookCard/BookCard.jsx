@@ -9,18 +9,30 @@ export default function BookCard({ item, deleteById }) {
   const handlerDelete = () => {
     deleteById(item.id);
   };
+  console.log(item.isLoaned);
 
   return (
-    <div>
-      <Link to={`/books/${item.id}`}>
-        <img src={item.coverUrl} alt='Cover Book'></img>
-      </Link>
-      <FiBookOpen className={item.isLoaned ? styles.isLoanedActive : ''} />
-      <ImBin2 onClick={handlerDelete} />
-      <BsFillPencilFill />
+    <div className={styles.containerCard}>
+      <div>
+        <Link to={`/books/${item.id}`}>
+          <img
+            className={styles.imgCard}
+            src={item.coverUrl}
+            alt='Cover Book'
+          ></img>
+        </Link>
+        <FiBookOpen
+          className={
+            item.isLoaned
+              ? '{styles.isLoanedActive}'
+              : '{styles.isLoanedDefault}'
+          }
+        />
+        <ImBin2 onClick={handlerDelete} />
+        <BsFillPencilFill />
 
-      <h3 className={styles.h3}>{item.title}</h3>
-      <h3>{item.author}</h3>
+        <h3>{item.title}</h3>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import apiService from '../../apiService/apiService';
 import BookCard from '../BookCard/BookCard';
+import styles from './bookGalery.module.css';
 
 export default function BookGalery() {
   const [book, setBook] = useState([]);
@@ -13,15 +14,19 @@ export default function BookGalery() {
 
   const deleteById = (idToDelete) => {
     apiService.deleteById(idToDelete);
-    let newData = book.filter((item)=> item.id !== idToDelete);
+    let newData = book.filter((item) => item.id !== idToDelete);
     setBook(newData);
-
-  }
+  };
 
   return (
-    <div>
+    <div className={styles.containerGallery}>
       {book.map((item) => (
-        <BookCard key={item.id} title={item.title} item={item} deleteById={deleteById} />
+        <BookCard
+          key={item.id}
+          title={item.title}
+          item={item}
+          deleteById={deleteById}
+        />
       ))}
     </div>
   );
