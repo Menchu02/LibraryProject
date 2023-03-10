@@ -1,7 +1,7 @@
 .isLoanedActive {
   color: red;
 }
-.isLoanedDefault {
+.isLoaned{
   color: blue;
 }
 /* .imgCard_containe {
