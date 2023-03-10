@@ -1,0 +1,22 @@
+.navContainer {
+  background-color: #247ba0;
+  width: auto;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fffcff;
+}
+.linkContainer {
+  display: flex;
+  align-items: center;
+}
+.ulContainer {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  margin-right: 200px;
+  font-size: 30px;
+  font-weight: bold;
+}
