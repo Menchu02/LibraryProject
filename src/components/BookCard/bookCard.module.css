@@ -1,7 +1,7 @@
 .isLoanedActive {
   color: red;
 }
-.isLoaned{
+.isLoaned {
   color: blue;
 }
 /* .imgCard_containe {
@@ -14,6 +14,7 @@
   height: 400px;
   object-fit: cover;
   object-position: center;
+  border-radius: 15px;
 }
 .containerCard {
   display: grid;
@@ -23,9 +24,3 @@
   justify-content: center;
   padding-top: 20px;
 }
-/* display: flex;
-  flex-direction: column;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
-/* grid-template-columns: repeat(auto-fit, 170px); */

@@ -1,15 +1,7 @@
 .containerGallery {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, 170px);
-  gap: 20px;
-  padding: 200px 15px 20px 15px;
-
-  justify-items: center;
-  justify-content: center; */
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+
+  margin-top: 85px;
+  margin-left: 60px;
 }
