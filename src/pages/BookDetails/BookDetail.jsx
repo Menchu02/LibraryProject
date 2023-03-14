@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import apiService from '../../apiService/apiService';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import apiService from "../../apiService/apiService";
 
 function BookDetail() {
   const { id } = useParams();
@@ -12,9 +12,9 @@ function BookDetail() {
 
   return (
     <div>
-      <img src={book.coverUrl} alt='Cover Book'></img>
+      <img src={book.coverUrl} alt="Cover Book"></img>
       <h3>{book.title}</h3>
-      <p>{book.author}</p>
+      <p>{book.Author}</p>
     </div>
   );
 }
