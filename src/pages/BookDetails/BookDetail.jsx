@@ -5,6 +5,7 @@ import apiService from '../../apiService/apiService';
 function BookDetail() {
   const { id } = useParams();
   const [book, setBook] = useState({});
+  // console.log(book.Author.name);
 
   useEffect(() => {
     apiService.getById(id).then((res) => setBook(res));
@@ -14,7 +15,7 @@ function BookDetail() {
     <div>
       <img src={book.coverUrl} alt='Cover Book'></img>
       <h3>{book.title}</h3>
-      <p>{book.author}</p>
+      {/* <p>{book.Author}</p> */}
     </div>
   );
 }
