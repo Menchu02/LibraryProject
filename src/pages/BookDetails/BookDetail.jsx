@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import apiService from '../../apiService/apiService';
+import NavBar from '../../components/NavBar/Navbar';
+import styles from './bookDetails.module.css';
 
 function BookDetail() {
   const { id } = useParams();
@@ -12,7 +14,7 @@ function BookDetail() {
   }, [id]);
 
   return (
-    <div>
+    <div className={styles.detailContainer}>
       <img src={book.coverUrl} alt='Cover Book'></img>
       <h3>{book.title}</h3>
       {/* <p>{book.Author}</p> */}

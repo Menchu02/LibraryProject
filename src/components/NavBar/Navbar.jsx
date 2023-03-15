@@ -12,11 +12,12 @@ export default function NavBar() {
       </div>
       <div className={styles.linkContainer}>
         <ul className={styles.ulContainer}>
-          <Link to={'/'}>
+          <Link className={styles.links} to={'/'}>
             <li>Home</li>
           </Link>
-
-          <li>Crear</li>
+          <Link to={'books/form/'}>
+            <li>Crear</li>
+          </Link>
         </ul>
       </div>
     </div>
