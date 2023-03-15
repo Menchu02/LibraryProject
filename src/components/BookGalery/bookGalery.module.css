@@ -1,7 +1,14 @@
 .containerGallery {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
   margin-top: 85px;
-  margin-left: 60px;
+  margin-left: 60px; 
+   display: flex; */
+
+  display: flex;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* margin: 30px; */
 }
