@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import apiService from '../../apiService/apiService';
-import BookCard from '../BookCard/BookCard';
-import styles from './bookGalery.module.css';
+import React, { useEffect, useState } from "react";
+import apiService from "../../apiService/apiService";
+import BookCard from "../BookCard/BookCard";
+import styles from "./bookGalery.module.css";
 
 export default function BookGalery() {
   const [book, setBook] = useState([]);
 
   useEffect(() => {
     apiService.getAll().then((data) => {
-      setBook(data);
+      setBook(
+        data.sort((a, b) =>
+          a.title > b.title ? 1 : a.title < b.title ? -1 : 0
+        )
+      );
     });
   }, []);
 
