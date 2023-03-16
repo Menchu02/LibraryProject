@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import apiService from '../../apiService/apiService';
 import styles from './form.module.css';
 // import { useState } from 'react';
 const itemBook = {
@@ -15,10 +16,22 @@ const itemBook = {
 export default function Form() {
   const [newBook, setNewBook] = useState(itemBook);
 
+  const handlerSubmit = async (e) => {
+    e.preventDefault();
+    await apiService.create(itemBook);
+    navigator('/');
+  };
+
+  const handleOnChange = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    newBook[name] = value;
+    setNewBook({ ...newBook });
+  };
+
   return (
     <div className={styles.formContainer}>
-      <h2>FORMULARIO:</h2>
-      <form className={styles.form}>
+      <form onSubmit={handlerSubmit} className={styles.form}>
         <img
           className={styles.formImg}
           src={newBook.coverUrl}
@@ -27,7 +40,7 @@ export default function Form() {
         <label>Portada libro:</label>
         <textarea
           value={newBook.coverUrl}
-          //   onChange={handleOnChange}
+          onChange={handleOnChange}
           className={styles.urlInput}
           type='textarea'
           name='coverUrl'
@@ -35,28 +48,28 @@ export default function Form() {
         <label>Título:</label>
         <input
           value={newBook.title}
-          //   onChange={handleOnChange}
+          onChange={handleOnChange}
           className={styles.nameInput}
           type='text'
           name='title'
         />
         <label>Autor:</label>
         <input
-          value={newBook.Author.name}
-          //   onChange={handleOnChange}
+          value={newBook.title}
+          onChange={handleOnChange}
           className={styles.nameInput}
           type='text'
           name='Author.name'
         />
         <label>Nacionalidad:</label>
         <input
-          value={newBook.Author.nacionalidad}
-          //   onChange={handleOnChange}
+          value={newBook.title}
+          onChange={handleOnChange}
           className={styles.nameInput}
           type='text'
           name='Author.nacionalidad'
         />
-        <button>Crear</button>
+        <button type='submit'>Crear</button>
       </form>
     </div>
   );
