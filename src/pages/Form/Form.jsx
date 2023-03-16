@@ -16,9 +16,9 @@ export default function Form() {
   const [newBook, setNewBook] = useState(itemBook);
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <h2>FORMULARIO:</h2>
-      <form>
+      <form className={styles.form}>
         <img
           className={styles.formImg}
           src={newBook.coverUrl}
@@ -31,7 +31,6 @@ export default function Form() {
           className={styles.urlInput}
           type='textarea'
           name='coverUrl'
-          placeholder='introduce url'
         />
         <label>Título:</label>
         <input
@@ -40,7 +39,6 @@ export default function Form() {
           className={styles.nameInput}
           type='text'
           name='title'
-          placeholder='book title'
         />
         <label>Autor:</label>
         <input
@@ -49,7 +47,6 @@ export default function Form() {
           className={styles.nameInput}
           type='text'
           name='Author.name'
-          placeholder='Author'
         />
         <label>Nacionalidad:</label>
         <input
@@ -58,8 +55,8 @@ export default function Form() {
           className={styles.nameInput}
           type='text'
           name='Author.nacionalidad'
-          placeholder='nacionalidad'
         />
+        <button>Crear</button>
       </form>
     </div>
   );

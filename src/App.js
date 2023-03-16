@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BookDetail from './pages/BookDetails/BookDetail';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/Navbar';
-import Form from './pages/BookDetails/Form/Form';
+import Form from './pages/Form/Form';
 
 function App() {
   return (

@@ -9,8 +9,8 @@
   height: 100vh;
 }
 .detailContainer img {
-  height: 500px;
-  width: 350px;
+  height: 400px;
+  width: 300px;
   border-radius: 15px;
   object-fit: cover;
 }
