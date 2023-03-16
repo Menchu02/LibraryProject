@@ -15,8 +15,15 @@ function BookDetail() {
 
   return (
     <div className={styles.detailContainer}>
-      <img src={book.coverUrl} alt='Cover Book'></img>
-      <h3>{book.title}</h3>
+      <div className={styles.detail}>
+        <img src={book.coverUrl} alt='Cover Book'></img>
+        <div className={styles.bookData}>
+          <h3>Título:{book.title}</h3>
+          <h3>Autor:{book.title}</h3>
+          <h3>Nacionalidad:{book.title}</h3>
+        </div>
+      </div>
+
       {/* <p>{book.Author}</p> */}
     </div>
   );

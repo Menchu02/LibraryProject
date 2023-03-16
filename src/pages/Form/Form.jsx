@@ -55,7 +55,7 @@ export default function Form() {
         />
         <label>Autor:</label>
         <input
-          value={newBook.title}
+          value={newBook.Author.name}
           onChange={handleOnChange}
           className={styles.nameInput}
           type='text'
@@ -63,13 +63,15 @@ export default function Form() {
         />
         <label>Nacionalidad:</label>
         <input
-          value={newBook.title}
+          value={newBook.Author.nacionalidad}
           onChange={handleOnChange}
           className={styles.nameInput}
           type='text'
           name='Author.nacionalidad'
         />
-        <button type='submit'>Crear</button>
+        <button className={styles.buttonForm} type='submit'>
+          Crear
+        </button>
       </form>
     </div>
   );
