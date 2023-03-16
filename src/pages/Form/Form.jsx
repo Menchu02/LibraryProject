@@ -7,7 +7,7 @@ const itemBook = {
   coverUrl:
     'https://drupal.nypl.org/sites-drupal/default/files/blogs/J5LVHEL.jpg',
   isLoaned: false,
-  Author: {
+  author: {
     name: '',
     nacionalidad: '',
   },
@@ -15,11 +15,12 @@ const itemBook = {
 
 export default function Form() {
   const [newBook, setNewBook] = useState(itemBook);
+  const [newAuthor, setNewAuthor] = useState(itemBook.author);
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
     await apiService.create(itemBook);
-    navigator('/');
+    // navigator('/');
   };
 
   const handleOnChange = (e) => {
@@ -27,6 +28,12 @@ export default function Form() {
     let value = e.target.value;
     newBook[name] = value;
     setNewBook({ ...newBook });
+  };
+  const handlerAuthor = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    newAuthor[name] = value;
+    setNewAuthor({ ...newAuthor });
   };
 
   return (
@@ -55,19 +62,19 @@ export default function Form() {
         />
         <label>Autor:</label>
         <input
-          value={newBook.Author.name}
-          onChange={handleOnChange}
+          value={newAuthor.name}
+          onChange={handlerAuthor}
           className={styles.nameInput}
           type='text'
-          name='Author.name'
+          name='name'
         />
         <label>Nacionalidad:</label>
         <input
-          value={newBook.Author.nacionalidad}
-          onChange={handleOnChange}
+          value={newAuthor.nacionalidad}
+          onChange={handlerAuthor}
           className={styles.nameInput}
           type='text'
-          name='Author.nacionalidad'
+          name='nacionalidad'
         />
         <button className={styles.buttonForm} type='submit'>
           Crear

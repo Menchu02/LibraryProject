@@ -12,6 +12,7 @@
   width: 20px;
   height: 20px;
   color: #fffcff;
+  cursor: pointer;
 }
 .edit {
   width: 20px;
@@ -32,12 +33,15 @@
   border-top-left-radius: 15px;
   transition: transform 0.8s;
 }
-.imgCard:hover {-webkit-transform:scale(1.2);transform:scale(0.9);}
+.imgCard:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(0.9);
+}
 .containerCard {
   margin: 50px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 10px 10px -6px black;
+  /* box-shadow: 0px 10px 10px -6px black; */
   border-radius: 15px;
 }
 .bottomCard {

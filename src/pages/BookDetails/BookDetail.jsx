@@ -7,10 +7,12 @@ import styles from './bookDetails.module.css';
 function BookDetail() {
   const { id } = useParams();
   const [book, setBook] = useState({});
+  const [author, setAuthor] = useState({});
   // console.log(book.Author.name);
 
   useEffect(() => {
     apiService.getById(id).then((res) => setBook(res));
+    apiService.getById(id).then((res) => setAuthor(res.author));
   }, [id]);
 
   return (
@@ -19,8 +21,8 @@ function BookDetail() {
         <img src={book.coverUrl} alt='Cover Book'></img>
         <div className={styles.bookData}>
           <h3>Título:{book.title}</h3>
-          <h3>Autor:{book.title}</h3>
-          <h3>Nacionalidad:{book.title}</h3>
+          <h3>Autor:{author.name}</h3>
+          <h3>Nacionalidad:{author.nacionalidad}</h3>
         </div>
       </div>
 
