@@ -30,7 +30,9 @@
   object-position: center;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
+  transition: transform 0.8s;
 }
+.imgCard:hover {-webkit-transform:scale(1.2);transform:scale(0.9);}
 .containerCard {
   margin: 50px;
   display: flex;
