@@ -15,13 +15,15 @@ export default function BookCard({ item, deleteById }) {
 
   return (
     <div className={styles.containerCard}>
-      <Link to={`/books/${item.id}`}>
-        <img
-          className={styles.imgCard}
-          src={item.coverUrl}
-          alt='Cover Book'
-        ></img>
-      </Link>
+      <div className={styles.img_container}>
+        <Link to={`/books/${item.id}`}>
+          <img
+            className={styles.imgCard}
+            src={item.coverUrl}
+            alt='Cover Book'
+          ></img>
+        </Link>
+      </div>
 
       <div>
         <div className={styles.bottomCard}>

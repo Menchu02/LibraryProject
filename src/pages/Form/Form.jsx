@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import apiService from '../../apiService/apiService';
 import styles from './form.module.css';
+import { useNavigate } from 'react-router-dom';
 // import { useState } from 'react';
 const itemBook = {
   title: '',
@@ -16,11 +17,12 @@ const itemBook = {
 export default function Form() {
   const [newBook, setNewBook] = useState(itemBook);
   const [newAuthor, setNewAuthor] = useState(itemBook.author);
+  const navigator = useNavigate();
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
     await apiService.create(itemBook);
-    // navigator('/');
+    navigator('/');
   };
 
   const handleOnChange = (e) => {

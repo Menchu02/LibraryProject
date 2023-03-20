@@ -13,7 +13,7 @@ const apiService = {
   },
   create(data) {
     return axios
-      .post(apiBase + data)
+      .post(apiBase, data)
       .then((res) => res.data)
       .catch((err) => console.log(err));
   },
