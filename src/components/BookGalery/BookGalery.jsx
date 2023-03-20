@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import apiService from "../../apiService/apiService";
-import BookCard from "../BookCard/BookCard";
-import styles from "./bookGalery.module.css";
+import React, { useEffect, useState } from 'react';
+import apiService from '../../apiService/bookService';
+import BookCard from '../BookCard/BookCard';
+import styles from './bookGalery.module.css';
 
 export default function BookGalery() {
   const [book, setBook] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import apiService from '../../apiService/apiService';
+import apiService from '../../apiService/bookService';
 // import NavBar from '../../components/NavBar/Navbar';
 import styles from './bookDetails.module.css';
 
