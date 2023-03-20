@@ -60,6 +60,7 @@
 .bottomCard h3 {
   color: #fffcff;
   font-size: 30px;
+  padding: 10px 0;
 }
 .linksBottomCard {
   display: flex;
