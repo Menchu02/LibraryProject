@@ -1,4 +1,5 @@
 .navContainer {
+  z-index: 1;
   background-color: #247ba0;
   width: 100%;
   height: 100px;
