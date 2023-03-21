@@ -11,7 +11,6 @@ export default function BookCard({ item, deleteById }) {
   const handlerDelete = () => {
     deleteById(item.id);
   };
-  console.log(item.isLoaned);
 
   return (
     <div className={styles.containerCard}>
