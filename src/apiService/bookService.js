@@ -17,5 +17,9 @@ const apiService = {
       .then((res) => res.data)
       .catch((err) => console.log(err));
   },
+
+  getIsNotLoaned() {
+    return axios.get(apiBase + '/isLoaned').then((res) => res.data);
+  },
 };
 export default apiService;

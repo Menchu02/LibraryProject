@@ -6,6 +6,7 @@ import BookDetail from './pages/BookDetails/BookDetail';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar/Navbar';
 import Form from './pages/Form/Form';
+import Disponibles from './pages/Disponibles/Disponibles';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route element={<Home />} path='/' />
         <Route element={<BookDetail />} path='/books/:id' />
         <Route element={<Form />} path='books/form/' />
+        <Route element={<Disponibles />} path='books/disponibles/' />
       </Routes>
     </div>
   );

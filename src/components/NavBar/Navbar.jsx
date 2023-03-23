@@ -18,6 +18,9 @@ export default function NavBar() {
           <Link className={styles.links} to={'books/form/'}>
             <li>Crear</li>
           </Link>
+          <Link className={styles.links} to={'books/disponibles'}>
+            <li>Disponibles</li>
+          </Link>
         </ul>
       </div>
     </div>

@@ -27,14 +27,15 @@ export default function Form() {
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
-    await apiService.create(itemBook);
+
+    await apiService.create(newBook);
     navigator('/');
   };
 
   const handleOnChange = (e) => {
     setNewBook({
       ...newBook,
-      title: e.target.value,
+      [e.target.name]: e.target.value,
       // coverUrl: e.target.value,
       // isLoaned: e.target.value,
     });
@@ -74,7 +75,7 @@ export default function Form() {
         />
         <select name='authors' id='authors' onChange={handlerAuthor}>
           {newAuthor.map((item) => (
-            <option key={item.id} value='name'>
+            <option key={item.id} value={item.id}>
               {item.name}
             </option>
           ))}
