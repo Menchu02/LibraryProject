@@ -35,7 +35,9 @@ export default function Form() {
   const handleOnChange = (e) => {
     setNewBook({
       ...newBook,
+
       [e.target.name]: e.target.value,
+
       // coverUrl: e.target.value,
       // isLoaned: e.target.value,
     });
@@ -48,7 +50,6 @@ export default function Form() {
   console.log(newBook);
   return (
     <div className={styles.formContainer}>
-      {/* {newAuthor && newAuthor[0].name} */}
       <form onSubmit={handlerSubmit} className={styles.form}>
         <img
           className={styles.formImg}
@@ -80,22 +81,7 @@ export default function Form() {
             </option>
           ))}
         </select>
-        {/* <label>Autor:</label>
-        <input
-          value={newAuthor.name}
-          onChange={handlerAuthor}
-          className={styles.nameInput}
-          type='text'
-          name='name'
-        />
-        <label>Nacionalidad:</label>
-        <input
-          value={newAuthor.nacionalidad}
-          onChange={handlerAuthor}
-          className={styles.nameInput}
-          type='text'
-          name='nacionalidad'
-        /> */}
+
         <button className={styles.buttonForm} type='submit'>
           Crear
         </button>

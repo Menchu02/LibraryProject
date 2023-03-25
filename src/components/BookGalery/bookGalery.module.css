@@ -1,9 +1,11 @@
 .containerGallery {
   background-color: #cbd4c2;
-  display: flex;
 
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 170px);
+  list-style: none;
+  gap: 10px 270px;
 
-  /* margin: 30px; */
+  justify-items: center;
+  justify-content: center;
 }

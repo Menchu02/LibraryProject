@@ -1,7 +1,17 @@
 .availableContainer {
-  background-color: #cbd4c2;
+  /* background-color: #cbd4c2;
   display: flex;
 
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-top: 100px; */
+  background-color: #cbd4c2;
+  padding-top: 110px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 170px);
+  list-style: none;
+  gap: 10px 270px;
+
+  justify-items: center;
+  justify-content: center;
 }

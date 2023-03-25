@@ -8,11 +8,7 @@ export default function BookGalery() {
 
   useEffect(() => {
     apiService.getAll().then((data) => {
-      setBook(
-        data.sort((a, b) =>
-          a.title > b.title ? 1 : a.title < b.title ? -1 : 0
-        )
-      );
+      setBook(data);
     });
   }, []);
 
