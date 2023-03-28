@@ -7,6 +7,7 @@ import BookDetail from './pages/BookDetails/BookDetail';
 import NavBar from './components/NavBar/Navbar';
 import Form from './pages/Form/Form';
 import Disponibles from './pages/Disponibles/Disponibles';
+import NewAuthor from './pages/NewAuthor/NewAuthor';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route element={<BookDetail />} path='/books/:id' />
         <Route element={<Form />} path='books/form/' />
         <Route element={<Disponibles />} path='books/disponibles/' />
+        <Route element={<NewAuthor />} path='books/newAuthors/' />
       </Routes>
     </div>
   );

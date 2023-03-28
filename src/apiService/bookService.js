@@ -21,5 +21,10 @@ const apiService = {
   getIsNotLoaned() {
     return axios.get(apiBase + '/isLoaned').then((res) => res.data);
   },
+
+  toggleIsLoaned(id, data) {
+    return axios.put(apiBase + `/${id}`, data);
+  },
 };
+
 export default apiService;

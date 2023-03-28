@@ -7,7 +7,7 @@ import { HiBookOpen } from 'react-icons/hi';
 
 import styles from './bookCard.module.css';
 
-export default function BookCard({ item, deleteById }) {
+export default function BookCard({ item, deleteById, handleIsLoaned }) {
   const handlerDelete = () => {
     deleteById(item.id);
   };
@@ -29,6 +29,7 @@ export default function BookCard({ item, deleteById }) {
           <h3>{item.title}</h3>
           <div className={styles.linksBottomCard}>
             <HiBookOpen
+              onClick={() => handleIsLoaned(item)}
               //CONDICIONAL CAMBIO COLOR
               className={
                 item.isLoaned ? styles.isLoanedActive : styles.isLoaned
