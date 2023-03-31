@@ -3,7 +3,6 @@ import apiService from '../../apiService/bookService';
 import styles from './form.module.css';
 import { useNavigate } from 'react-router-dom';
 import authorService from '../../apiService/authorService';
-import { Link } from 'react-router-dom';
 
 const itemBook = {
   title: '',
@@ -64,7 +63,7 @@ export default function Form() {
           className={styles.urlInput}
           type='textarea'
           name='coverUrl'
-          placeholder='imagen'
+          placeholder='Añade imagen'
         />
 
         <input
@@ -73,26 +72,32 @@ export default function Form() {
           className={styles.nameInput}
           type='text'
           name='title'
-          placeholder='título'
+          placeholder='Añade título'
         />
-        <select name='authors' id='authors' onChange={handlerAuthor}>
-          {newAuthor.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+        <div className={styles.buttonsAuthor}>
+          <select
+            className={styles.selectInput}
+            name='authors'
+            id='authors'
+            onChange={handlerAuthor}
+          >
+            {newAuthor.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            ))}
+          </select>
 
-        {/* <button>Nuevo autor</button> */}
-        {/* <button
-          onClick={() => navigator('http://localhost:3000/books/newAuthors/')}
-        >
-          Nuevo autor
-        </button> */}
-        <a href='http://localhost:3000/books/newAuthors/'>Nuevo autor</a>
+          <a
+            className={styles.anchorAuthor}
+            href='http://localhost:3000/books/newAuthors/'
+          >
+            Añadir autor
+          </a>
+        </div>
 
         <button className={styles.buttonForm} type='submit'>
-          Crear
+          Añadir libro
         </button>
       </form>
     </div>

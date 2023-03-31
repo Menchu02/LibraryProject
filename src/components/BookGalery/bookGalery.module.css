@@ -9,3 +9,13 @@
   justify-items: center;
   justify-content: center;
 }
+.container_search_gallery {
+  background-color: #cbd4c2;
+}
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}

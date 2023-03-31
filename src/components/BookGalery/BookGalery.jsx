@@ -2,16 +2,34 @@ import React, { useEffect, useState } from 'react';
 import apiService from '../../apiService/bookService';
 
 import BookCard from '../BookCard/BookCard';
+import SearchBar from '../SearchBar/SearchBar';
 import styles from './bookGalery.module.css';
 
 export default function BookGalery() {
   const [book, setBook] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+  const [itemBook, setItemBook] = useState([]);
 
   useEffect(() => {
-    apiService.getAll().then((data) => {
-      setBook(data);
-    });
+    getBooksSate();
   }, []);
+
+  const getBooksSate = () => {
+    apiService.getAll().then((data) => {
+      setItemBook(data);
+      setBook([...data]);
+    });
+  };
+
+  //FUNCIÓN FILTRAR POR NOMBRE
+  const filterBookByName = (e) => {
+    setSearchInput(e.target.value);
+    setBook(
+      itemBook.filter((item) =>
+        item.title.toUpperCase().includes(e.target.value.toUpperCase())
+      )
+    );
+  };
 
   //FUNCIÓN PARA CAMBIAR EL ESTADO DEL ISLOANED:
   const handleIsLoaned = (libro) => {
@@ -38,16 +56,24 @@ export default function BookGalery() {
   };
 
   return (
-    <div className={styles.containerGallery}>
-      {book.map((item) => (
-        <BookCard
-          handleIsLoaned={handleIsLoaned}
-          key={item.id}
-          title={item.title}
-          item={item}
-          deleteById={deleteById}
+    <div className={styles.container_search_gallery}>
+      <div className={styles.searchContainer}>
+        <SearchBar
+          filterBookByName={filterBookByName}
+          searchInput={searchInput}
         />
-      ))}
+      </div>
+      <div className={styles.containerGallery}>
+        {book.map((item) => (
+          <BookCard
+            handleIsLoaned={handleIsLoaned}
+            key={item.id}
+            title={item.title}
+            item={item}
+            deleteById={deleteById}
+          />
+        ))}
+      </div>
     </div>
   );
 }
