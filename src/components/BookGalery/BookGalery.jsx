@@ -8,18 +8,27 @@ import styles from './bookGalery.module.css';
 export default function BookGalery() {
   const [book, setBook] = useState([]);
   const [searchInput, setSearchInput] = useState('');
+  const [itemBook, setItemBook] = useState([]);
 
   useEffect(() => {
-    apiService.getAll(searchInput).then((data) => {
-      setBook(data);
+    getBooksSate();
+  }, []);
+
+  const getBooksSate = () => {
+    apiService.getAll().then((data) => {
+      setItemBook(data);
+      setBook([...data]);
     });
-  }, [searchInput]);
+  };
 
   //FUNCIÓN FILTRAR POR NOMBRE
   const filterBookByName = (e) => {
-    let title = e.target.value;
-    console.log(title);
-    setSearchInput(title);
+    setSearchInput(e.target.value);
+    setBook(
+      itemBook.filter((item) =>
+        item.title.toUpperCase().includes(e.target.value.toUpperCase())
+      )
+    );
   };
 
   //FUNCIÓN PARA CAMBIAR EL ESTADO DEL ISLOANED:

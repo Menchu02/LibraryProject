@@ -5,6 +5,7 @@ export default function SearchBar({ filterBookByName, searchInput }) {
   return (
     <div>
       <input
+        type='text'
         placeholder='  Buscador'
         value={searchInput}
         onChange={filterBookByName}
