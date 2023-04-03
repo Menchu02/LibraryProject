@@ -3,6 +3,7 @@ import apiService from '../../apiService/bookService';
 import styles from './form.module.css';
 import { useNavigate } from 'react-router-dom';
 import authorService from '../../apiService/authorService';
+import { Link } from 'react-router-dom';
 
 const itemBook = {
   title: '',
@@ -87,13 +88,16 @@ export default function Form() {
               </option>
             ))}
           </select>
+          <Link className={styles.anchorAuthor} to={'/books/newAuthors/'}>
+            Añadir autor
+          </Link>
 
-          <a
+          {/* <a
             className={styles.anchorAuthor}
             href='http://localhost:3000/books/newAuthors/'
           >
             Añadir autor
-          </a>
+          </a> */}
         </div>
 
         <button className={styles.buttonForm} type='submit'>
