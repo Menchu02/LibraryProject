@@ -6,29 +6,38 @@ import SearchBar from '../SearchBar/SearchBar';
 import styles from './bookGalery.module.css';
 
 export default function BookGalery() {
+  //estado galería
   const [book, setBook] = useState([]);
+  //estado filtro input
   const [searchInput, setSearchInput] = useState('');
-  const [itemBook, setItemBook] = useState([]);
+  //estado de libro filtrado
+  // const [itemBook, setItemBook] = useState([]);
 
+  // useEffect(() => {
+  //   getBooksSate();
+  // }, []);
+
+  // const getBooksSate = () => {
+  //   apiService.getAll().then((data) => {
+  //     setItemBook(data);
+
+  //     setBook([...data]);
+  //   });
+  // };
   useEffect(() => {
-    getBooksSate();
-  }, []);
-
-  const getBooksSate = () => {
-    apiService.getAll().then((data) => {
-      setItemBook(data);
-      setBook([...data]);
-    });
-  };
+    apiService.getAll(searchInput).then((data) => setBook(data));
+  }, [searchInput]);
 
   //FUNCIÓN FILTRAR POR NOMBRE
   const filterBookByName = (e) => {
-    setSearchInput(e.target.value);
-    setBook(
-      itemBook.filter((item) =>
-        item.title.toUpperCase().includes(e.target.value.toUpperCase())
-      )
-    );
+    // setSearchInput(e.target.value);
+    // setBook(
+    //   itemBook.filter((item) =>
+    //     item.title.toUpperCase().includes(e.target.value.toUpperCase())
+    //   )
+    // );
+    let title = e.target.value;
+    setSearchInput(title);
   };
 
   //FUNCIÓN PARA CAMBIAR EL ESTADO DEL ISLOANED:

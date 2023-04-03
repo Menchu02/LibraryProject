@@ -16,7 +16,6 @@ export default function NewAuthor() {
 
   const handleNewAuthor = async (e) => {
     e.preventDefault();
-
     await apiService.createAuthor(author);
     // navigator('/form/');
     navigator('/books/form/');
