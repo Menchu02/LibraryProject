@@ -2,9 +2,17 @@ import React from 'react';
 import styles from './navBar.module.css';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
-import { FaRegUser } from 'react-icons/fa';
+import { FaRegUser, FaUserSlash } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function NavBar() {
+  let navigate = useNavigate();
+
+  const handleLogOut = () => {
+    localStorage.removeItem('login');
+    navigate('/');
+  };
+
   return (
     <div className={styles.navContainer}>
       <div className={styles.logoContainer}>
@@ -22,7 +30,10 @@ export default function NavBar() {
           <Link className={styles.links} to={'books/disponibles'}>
             <li>Disponibles</li>
           </Link>
-          <FaRegUser />
+          <Link to={'books/login/'}>
+            <FaRegUser />
+          </Link>
+          <FaUserSlash onClick={handleLogOut} />
         </ul>
       </div>
     </div>
