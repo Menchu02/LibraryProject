@@ -10,8 +10,6 @@ export default function BookGalery() {
   const [book, setBook] = useState([]);
   //estado filtro input
   const [searchInput, setSearchInput] = useState('');
-  //estado de libro filtrado
-  // const [itemBook, setItemBook] = useState([]);
 
   // useEffect(() => {
   //   getBooksSate();
@@ -30,12 +28,6 @@ export default function BookGalery() {
 
   //FUNCIÓN FILTRAR POR NOMBRE
   const filterBookByName = (e) => {
-    // setSearchInput(e.target.value);
-    // setBook(
-    //   itemBook.filter((item) =>
-    //     item.title.toUpperCase().includes(e.target.value.toUpperCase())
-    //   )
-    // );
     let title = e.target.value;
     setSearchInput(title);
   };

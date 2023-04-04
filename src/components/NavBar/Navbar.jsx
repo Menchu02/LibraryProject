@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './navBar.module.css';
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { FaRegUser } from 'react-icons/fa';
 
 export default function NavBar() {
   return (
@@ -21,6 +22,7 @@ export default function NavBar() {
           <Link className={styles.links} to={'books/disponibles'}>
             <li>Disponibles</li>
           </Link>
+          <FaRegUser />
         </ul>
       </div>
     </div>
