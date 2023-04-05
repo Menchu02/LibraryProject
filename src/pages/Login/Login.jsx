@@ -34,7 +34,7 @@ const Login = () => {
           placeholder="Nombre"
         />
         <input type="text" name="mail" placeholder="correo electrónico" />
-        <input type="text" name="password" placeholder="contraseña" />
+        <input type="password" name="password" placeholder="contraseña" />
         <button onClick={handlerSubmit}>Ingresar</button>
       </form>
     </div>
