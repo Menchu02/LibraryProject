@@ -1,12 +1,12 @@
-import React from 'react';
-import styles from './login.module.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import styles from "./login.module.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const itemUser = {
-  user: '',
-  mail: '',
-  password: '',
+  user: "",
+  mail: "",
+  password: "",
 };
 
 const Login = () => {
@@ -15,8 +15,8 @@ const Login = () => {
 
   const handlerSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('login', `${user.user}`);
-    navigate('books/form');
+    localStorage.setItem("login", `${user.user}`);
+    navigate("/books/form/");
   };
 
   const handleOnChange = (e) => {
@@ -29,12 +29,12 @@ const Login = () => {
         <h1>Login</h1>
         <input
           onChange={handleOnChange}
-          type='text'
-          name='user'
-          placeholder='Nombre'
+          type="text"
+          name="user"
+          placeholder="Nombre"
         />
-        <input type='text' name='mail' placeholder='correo electrónico' />
-        <input type='text' name='password' placeholder='contraseña' />
+        <input type="text" name="mail" placeholder="correo electrónico" />
+        <input type="text" name="password" placeholder="contraseña" />
         <button onClick={handlerSubmit}>Ingresar</button>
       </form>
     </div>
