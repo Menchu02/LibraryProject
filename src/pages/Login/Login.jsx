@@ -33,7 +33,7 @@ const Login = () => {
           name="user"
           placeholder="Nombre"
         />
-        <input type="text" name="mail" placeholder="correo electrónico" />
+        <input type="email" name="mail" placeholder="correo electrónico" />
         <input type="password" name="password" placeholder="contraseña" />
         <button onClick={handlerSubmit}>Ingresar</button>
       </form>
