@@ -16,7 +16,7 @@ const Login = () => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('login', `${user.user}`);
-    navigate('books/form/');
+    navigate('/books/form//');
   };
 
   const handleOnChange = (e) => {
@@ -33,8 +33,8 @@ const Login = () => {
           name='user'
           placeholder='Nombre'
         />
-        <input type='text' name='mail' placeholder='correo electrónico' />
-        <input type='text' name='password' placeholder='contraseña' />
+        <input type='email' name='mail' placeholder='correo electrónico' />
+        <input type='password' name='password' placeholder='contraseña' />
         <button onClick={handlerSubmit}>Ingresar</button>
       </form>
     </div>
