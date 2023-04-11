@@ -30,7 +30,7 @@ export default function NavBar() {
           <Link className={styles.links} to={'books/disponibles'}>
             <li>Disponibles</li>
           </Link>
-          <Link to={'books/login/'}>
+          <Link className={styles.links} to={'books/login/'}>
             <FaRegUser />
           </Link>
           <FaUserSlash onClick={handleLogOut} />

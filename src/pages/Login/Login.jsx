@@ -16,7 +16,7 @@ const Login = () => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('login', `${user.user}`);
-    navigate('/books/form//');
+    navigate('/books/form/');
   };
 
   const handleOnChange = (e) => {
